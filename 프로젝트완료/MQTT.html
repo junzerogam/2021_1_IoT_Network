@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<title>서울양양고속도로 소요시간 측정</title>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	var socket = io.connect();
+	var timer = null;
+	var timenow = new Date();
+	var Arrive_Chuncheon_hour = null;
+	var Arrive_Chuncheon_min = null;
+	var Arrive_Namyangju_hour = null;
+	var Arrive_Namyangju_min = null;
+	$(document).ready(function(){
+		socket.on("socket_up_Toward_Chuncheon", function(data){
+			data = JSON.parse(data);
+			if(data.Toward_Chuncheon < 40) //평균 소요시간이 40분 미만이면
+				$(".mqttlist_Toward_Chuncheon").html('<li>' + '남양주IC -> 남춘천IC까지 소요시간 : ' +data.Toward_Chuncheon+ ' 분' + '</li>'); //소요시간만 출력
+			else //평균 소요시간이 40분이상이면
+				// 가변차로가 시행중이라는 것을 같이 출력해준다.
+				$(".mqttlist_Toward_Chuncheon").html('<li>' + '남양주IC -> 남춘천IC까지 소요시간 : ' +data.Toward_Chuncheon+ ' 분' + ', (가변차로가 시행중입니다)' + '</li>');
+			Arrive_Chuncheon_min = parseInt(timenow.getMinutes()) + parseInt(data.Toward_Chuncheon); //현재시간 + 소요시간
+			Arrive_Chuncheon_hour = parseInt(timenow.getHours()); //현재시간
+
+			if(Arrive_Chuncheon_min >= 60){ // 분을 시간으로 바꿔주는 조건문
+				Arrive_Chuncheon_hour += 1;
+				if(Arrive_Chuncheon_hour >= 24){
+					Arrive_Chuncheon_hour = 0;
+				}
+				Arrive_Chuncheon_min -= 60;
+			}
+		});
+		socket.on("socket_up_Toward_Namyangju", function(data){
+			data = JSON.parse(data);
+			if(data.Toward_Namyangju < 40) //평균 소요시간이 40분 미만이면
+				$(".mqttlist_Toward_Namyangju").html('<li>' + '남춘천IC -> 남양주IC까지 소요시간 : ' +data.Toward_Namyangju+' 분' + '</li>'); //소요시간만 출력
+			else //평균 소요시간이 40분 이상이면
+				//위와 같이 가변차로가 시행중이라는 것을 같이 출력해준다.
+				$(".mqttlist_Toward_Namyangju").html('<li>' + '남춘천IC -> 남양주IC까지 소요시간 : ' +data.Toward_Namyangju+' 분' + ', (가변차로가 시행중입니다)' + '</li>');
+			Arrive_Namyangju_min = parseInt(timenow.getMinutes()) + parseInt(data.Toward_Namyangju); //현재시간 + 소요시간
+			Arrive_Namyangju_hour = parseInt(timenow.getHours()); //현재시간
+
+			if(Arrive_Namyangju_min >= 60){
+				Arrive_Namyangju_hour += 1;
+				if(Arrive_Namyangju_hour >= 24){
+					Arrive_Namyangju_hour = 0;
+				}
+				Arrive_Namyangju_min -= 60;
+			}
+		});
+		if(timer==null){
+			timer = window.setInterval("timer_1()", 10000); //3초에 한번씩 전송
+		}
+	});
+	function timer_1(){
+		socket.emit("socket_evt_update", JSON.stringify({})); //소켓이벤트 업데이트 전송 데이터출력
+	}
+	function predict_Arrivetime(){ //버튼이 클릭되면 실행되는 이벤트
+		socket.emit("socket_evt_bnt", "When We Arrive that place?");
+		document.getElementById("btnclick_print_current_time").innerText = "현재시간 : " + timenow.getHours() + "시 " + timenow.getMinutes() + "분 ";
+		document.getElementById("btnclick_print_toward_Chuncheon").innerText = " 남양주IC -> 남춘천IC까지 예상 도착 시간 : " + Arrive_Chuncheon_hour + "시 " 
+															+ Arrive_Chuncheon_min + "분";
+		document.getElementById("btnclick_print_toward_Namyangju").innerText = " 남춘천IC -> 남양주IC까지 예상 도착 시간 : " + Arrive_Namyangju_hour + "시 " 
+															+ Arrive_Namyangju_min + "분";												
+	}
+
+</script>
+</head>    
+<body>
+	여름 휴가철 상습 정체구간 서울양양고속도로 (남양주IC - 남춘천IC 구간) 소요시간 
+	<p>
+		<img src="ex.jpg"></p>
+		<img src="ChunHighway.jpg"></p>
+	</p>
+	<div id="msg">
+		<div id="mqtt_logs">
+			<ul class="mqttlist_Toward_Chuncheon"></ul> 
+			<ul class="mqttlist_Toward_Namyangju"></ul>
+			<button id = "predict_Arrivetime" onclick = "predict_Arrivetime()"><b>예상도착시간</b></button>
+		</div>
+	</div>
+	<div id = "btnclick_print_current_time"></div>
+	<div id = "btnclick_print_toward_Chuncheon"></div>
+	<div id = "btnclick_print_toward_Namyangju"></div>
+</body>
+</html>
+
