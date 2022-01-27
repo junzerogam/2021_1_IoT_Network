@@ -11,4 +11,20 @@
 <img src=브로커그림.jpg> 
 
 # Code 
-### 1. MQTT Publisher
+## 1. MQTT Publisher
+### 1.1 Run Method
+<img src=자바소스코드1TopicPublish.jpg> 
+
+### 1.2 connectBroker
+<img src=자바소스코드2ConnectBroker.jpg>
+
+### 1.3 Publish Data
+<img src=자바소스코드3PublishData.jpg>
+
+### 1.4 Get Traffic Time
+<img src=자바소스코드4towardNamyangj메소드.jpg>
+<img src=자바소스코드5towardChuncheon메소드.jpg>
+
+### 1.5 messageArrive Method
+* 버튼 클릭시 동작되는 메소드
+<img src=자바소스코드6messageArrived.jpg>
