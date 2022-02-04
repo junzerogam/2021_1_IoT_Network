@@ -38,3 +38,10 @@
 
 ### 2.3 Topic Save 
 * 구독된 토픽을 데이터베이스에 저장
+<img src=vscode캡쳐3.png>
+
+### 2.4 Socket 
+* 소켓통신을 이용한 데이터저장  
+<img src=vscode캡쳐4.png>
+* 소켓통신을 이용한 버튼이벤트생성  
+<img src=vscode캡쳐5.png>
