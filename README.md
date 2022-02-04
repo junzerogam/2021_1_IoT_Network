@@ -57,3 +57,25 @@
 
 ### 3.2 HTML Page Code
 <img src=html코드1.png>
+
+# Result
+## 1. Broker Server Connect / Start Topic Publish
+<img src=자바실행화면.jpg>  
+
+## 2. Databace Connect / Start Topic Subscribe 
+<img src=vscode실행화면1.jpg>  
+
+## 3. Topic Subscribe
+<img src=vscode실행화면2.jpg>  
+<img src=vscode실행화면4.jpg>  
+
+## 4. HTML Page Connect / Press the Button Event
+<img src=vscode실행화면3.jpg>  
+<img src=자바실행화면2.jpg>  
+
+## 5. ROBO 3T Database
+<img src=ROBO3T.jpg>    
+
+## 6. HTML Page 
+<img src=html페이지캡쳐.jpg>
+<img src=html페이지캡쳐2.jpg>
