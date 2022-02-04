@@ -31,3 +31,10 @@
 
 ## 2. MQTT Subscriber
 ### 2.1 Connect MongoDB 
+<img src=vscode캡쳐2.jpg.png>  
+
+### 2.2 Subscire Topic
+<img src=vscode캡쳐1.jpg>
+
+### 2.3 Topic Save 
+* 구독된 토픽을 데이터베이스에 저장
