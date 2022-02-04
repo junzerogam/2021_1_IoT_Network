@@ -48,5 +48,12 @@
 <img src=vscode캡쳐5.png>
 
 ## 3. Socket Communication / HTML Page 
-### 3.1 Socekt Communication
+### 3.1 Socket Communication
+* 소켓통신에 의해 해당 파일이 수신된다면 다음과 같이 실행됨
+<img src=vscode캡쳐6.png>
 
+* 버튼이 눌렸을 때 실행되는 메소드
+<img src=vscode캡쳐7.png>  
+
+### 3.2 HTML Page Code
+<img src=html코드1.png>
