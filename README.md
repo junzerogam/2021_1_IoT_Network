@@ -47,5 +47,11 @@
   <img src=docs/img/html페이지캡쳐2.jpg width="50%" height="50%">
 </p>  
 
+## 📌 Result
+✔️ MQTT Protocol의 전반적인 이해  
+✔️ API 활용  
+✔️ 데이터베이스 활용  
+✔️ HTML 기반 웹페이지 구현  
 
-
+## 😄 What's Next Project ?
+✔️ Coming Soon !
