@@ -1,4 +1,4 @@
-# IoT-Network-Project
+# IoT Network Project
 * MQTT Protocol 및 실시간 교통정보 API를 활용한 웹페이지 구현 (2021.05-2021.06)
 * 2021-1 Spring IoT Network Project
 ## :exclamation: Purpose
