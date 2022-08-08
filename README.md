@@ -16,11 +16,36 @@
 
 ## 🏃 Ongoing
 ### 1️⃣ Connect Broker Server
+<p align="left">
+  <img src=docs/img/자바실행화면.jpg> 
+</p>  
+
 ### 2️⃣ Publish Topic
-### 3️⃣ Connect MongoDB
-### 4️⃣ Subscribe Topic & Store at Database
+<p align="left">
+  <img src=docs/img/자바실행화면3.jpg> 
+</p>  
+
+### 3️⃣ Connect MongoDB & start Subscirbe Topic
+<p align="left">
+  <img src=docs/img/vscode실행화면1.jpg>  
+  <img src=docs/img/vscode실행화면4.jpg> 
+</p>  
+
+### 4️⃣ Store at Database
+<p align="left">
+  <img src=docs/img/ROBO3T.jpg> 
+</p>  
+
 ### 5️⃣ TCP Socket Communication
+<p align="left">
+  <img src=docs/img/vscode캡쳐4.png width="50%" height="50%"> 
+</p>  
+
 ### 6️⃣ Representation
+<p align="left">
+  <img src=docs/img/html페이지캡쳐.jpg width="50%" height="50%">
+  <img src=docs/img/html페이지캡쳐2.jpg width="50%" height="50%">
+</p>  
 
 
 
