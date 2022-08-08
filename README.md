@@ -12,4 +12,15 @@
 ## 💻 Structure
 <p align="center">
   <img src=docs/img/브로커그림.jpg width="70%" height="70%"> 
-</p>
+</p>  
+
+## 🏃 Ongoing
+### 1️⃣ Connect Broker Server
+### 2️⃣ Publish Topic
+### 3️⃣ Connect MongoDB
+### 4️⃣ Subscribe Topic & Store at Database
+### 5️⃣ TCP Socket Communication
+### 6️⃣ Representation
+
+
+
