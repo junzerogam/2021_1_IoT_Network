@@ -15,7 +15,7 @@
 </p>  
 
 ## 🏃 Ongoing
-### :zero: About MQTT
+### :zero: About MQTT Protocol
 <p align="left">
   <img src=docs/img/mqtt.jpg width="50%" height="50%"> 
 </p>  
