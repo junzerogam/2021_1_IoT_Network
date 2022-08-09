@@ -16,6 +16,9 @@
 
 ## 🏃 Ongoing
 ### :zero: About MQTT
+<p align="left">
+  <img src=docs/img/mqtt.jpg width="50%" height="50%"> 
+</p>  
 
 ### 1️⃣ Connect Broker Server
 <p align="left">
